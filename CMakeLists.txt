@@ -24,7 +24,7 @@ endif()
 ####################################################################################################
 ### Project Config                                                                               ###
 ####################################################################################################
-project("CMake_Testing") # Specify the name of the project
+project("{{ProjectName}}") # Specify the name of the project
 
 # Useful variables
 # - ${CMAKE_PROJECT_NAME} == THIS project name
