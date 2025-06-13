@@ -8,3 +8,9 @@ This config is based on [This Video](https://www.youtube.com/watch?v=IBgfeZME2Vw
 
 ### Flecs :
 - Flecs (Static) : [CMakeFile](./presets/flecsCMake.txt)
+<br/><br/>
+
+### FreeGLUT :
+
+- FreeGLUT (Static) : [CMakeFile](./presets/freeglutCMake.txt)
+<br/><br/>

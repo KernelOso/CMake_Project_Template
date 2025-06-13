@@ -1,18 +1,19 @@
 #
-#  This presets only import in a static way the ECS library : Flecs
+#   This presets only import in a static way the FreeGLUT Library
 #
 
 #
 #   If you only need the import of library :
 #   
-#   1. clone : git clone https://github.com/SanderMertens/flecs.git thirdparty/flecs
+#   1. clone : git clone https://github.com/freeglut/freeglut.git thirdparty/freeglut
 #
-#   2. config : set(FLECS_SHARED FALSE CACHE BOOL "" FORCE)
+#   2. config : set(FREEGLUT_STATIC TRUE CACHE BOOL "Link FreeGLUT statically" FORCE)
 #
-#   3. import : add_subdirectory("thirdparty/flecs")
+#   3. import : add_subdirectory("thirdparty/freeglut")
 #
-#   4. link : target_link_libraries("${CMAKE_PROJECT_NAME}" PRIVATE flecs_static)
+#   4. link : target_link_libraries("${CMAKE_PROJECT_NAME}" PRIVATE freeglut_static)
 #
+
 
 cmake_minimum_required(VERSION "3.20")
 
@@ -39,7 +40,7 @@ endif()
 ####################################################################################################
 ### Project Config                                                                               ###
 ####################################################################################################
-project("Flecs_Project") # Specify the name of the project
+project("FreeGLUT_Project") # Specify the name of the project
 
 # Useful variables
 # - ${CMAKE_PROJECT_NAME} == THIS project name
@@ -78,15 +79,15 @@ target_include_directories("${CMAKE_PROJECT_NAME}" PUBLIC "${CMAKE_CURRENT_SOURC
 ##### Git Clone Commands
 ##################
 
-# Flecs
-#git clone https://github.com/SanderMertens/flecs.git thirdparty/flecs
+# FreeGLUT
+#git clone https://github.com/freeglut/freeglut.git thirdparty/freeglut
 
 ##################
 ##### Library Config
 ##################
 
-# Flecs
-set(FLECS_SHARED FALSE CACHE BOOL "" FORCE)
+# FreeGLUT
+set(FREEGLUT_STATIC TRUE CACHE BOOL "Link FreeGLUT statically" FORCE)
 
 ##################
 ##### Subdirectory Import
@@ -94,17 +95,17 @@ set(FLECS_SHARED FALSE CACHE BOOL "" FORCE)
 #add_subdirectory("thirdparty/...")
 # This Line, tells to CMake to look in the specified folder, for other CMakeList files to add in the project
 
-# Flecs
-add_subdirectory("thirdparty/flecs")
+# FreeGLUT
+add_subdirectory("thirdparty/freeglut")
 
 ##################
 ##### External Project Libraries
 ##################
-#target_link_libraries("<project name>" <Private/Public/Protected> "SubProject")
+#target_link_libraries("${CMAKE_PROJECT_NAME}" <Private/Public/Protected> "SubProject")
 # After add an external project whit `add_subdirectory()` you can add the sub project to the project usings this line
 
-# Flecs
-target_link_libraries("${CMAKE_PROJECT_NAME}" PRIVATE flecs_static)
+# FreeGLUT
+target_link_libraries("${CMAKE_PROJECT_NAME}" PRIVATE freeglut_static)
 
 
 ####################################################################################################
