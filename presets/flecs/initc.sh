@@ -3,7 +3,7 @@ set -e # Exit when errores detected
 set -u # exit when use variables not inicialized
 set -euo pipefail
 #github url
-githubPresetRawUrl = "https://raw.githubusercontent.com/KernelOso/CMake_Project_Template/refs/heads/main/presets/flecs/"
+githubPresetRawUrl="https://raw.githubusercontent.com/KernelOso/CMake_Project_Template/refs/heads/main/presets/flecs/"
 # Missing CMake 
 if command -v cmake >/dev/null 2>&1; then
     echo -e "\033[36m Initializing Project..."
