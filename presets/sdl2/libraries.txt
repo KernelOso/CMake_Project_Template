@@ -2,6 +2,6 @@ mkdir -p thirdparty/sdl
 git init thirdparty/sdl
 cd thirdparty/sdl
 git remote add origin https://github.com/libsdl-org/SDL.git
-git fetch --depth 1 origin 98d1f3a45aae568ccd6ed5fec179330f47d4d356
+git fetch origin 98d1f3a45aae568ccd6ed5fec179330f47d4d356
 cd ..
 cd ..
