@@ -2,19 +2,6 @@
 #   This presets only import in a static way the FreeGLUT Library
 #
 
-#
-#   If you only need the import of library :
-#   
-#   1. clone : git clone https://github.com/freeglut/freeglut.git thirdparty/freeglut
-#
-#   2. config : set(FREEGLUT_STATIC TRUE CACHE BOOL "Link FreeGLUT statically" FORCE)
-#
-#   3. import : add_subdirectory("thirdparty/freeglut")
-#
-#   4. link : target_link_libraries("${CMAKE_PROJECT_NAME}" PRIVATE freeglut_static)
-#
-
-
 cmake_minimum_required(VERSION "3.20")
 
 ####################################################################################################
@@ -74,13 +61,6 @@ target_include_directories("${CMAKE_PROJECT_NAME}" PUBLIC "${CMAKE_CURRENT_SOURC
 ####################################################################################################
 ### Add external project libraries                                                               ###
 ####################################################################################################
-
-##################
-##### Git Clone Commands
-##################
-
-# FreeGLUT
-#git clone https://github.com/freeglut/freeglut.git thirdparty/freeglut
 
 ##################
 ##### Library Config

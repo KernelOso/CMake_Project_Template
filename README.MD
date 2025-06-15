@@ -22,7 +22,6 @@ curl -s https://raw.githubusercontent.com/KernelOso/CMake_Project_Template/refs/
 - Flecs (Static) : [CMakeFile](./presets/flecs/CMakeLists.txt) | [Init Scrips](./presets/flecs/project.md)
 <br/><br/>
 
-### FreeGLUT :
-
-- FreeGLUT (Static) : [CMakeFile](./presets/freeglutCMake.txt)
+### SDL2 :
+- Flecs (Static) : [CMakeFile](./presets/sdl2/CMakeLists.txt) | [Init Scrips](./presets/sdl2/project.md)
 <br/><br/>

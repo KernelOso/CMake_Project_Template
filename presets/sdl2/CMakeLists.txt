@@ -1,5 +1,5 @@
 #
-#  This presets only import in a static way the ECS library : Flecs
+#  This presets only import in a static way the SDL2 library
 #
 
 cmake_minimum_required(VERSION "3.20")
@@ -65,8 +65,9 @@ target_include_directories("${CMAKE_PROJECT_NAME}" PUBLIC "${CMAKE_CURRENT_SOURC
 ##### Library Config
 ##################
 
-# Flecs
-set(FLECS_SHARED FALSE CACHE BOOL "" FORCE)
+# SDL
+set(SDL_STATIC ON CACHE BOOL "Link SDL statically" FORCE)
+target_include_directories("${CMAKE_PROJECT_NAME}" PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}/thirdparty/sdl/include/" )
 
 ##################
 ##### Subdirectory Import
@@ -74,8 +75,8 @@ set(FLECS_SHARED FALSE CACHE BOOL "" FORCE)
 #add_subdirectory("thirdparty/...")
 # This Line, tells to CMake to look in the specified folder, for other CMakeList files to add in the project
 
-# Flecs
-add_subdirectory("thirdparty/flecs")
+# SDl
+add_subdirectory("thirdparty/sdl")
 
 ##################
 ##### External Project Libraries
@@ -83,8 +84,8 @@ add_subdirectory("thirdparty/flecs")
 #target_link_libraries("<project name>" <Private/Public/Protected> "SubProject")
 # After add an external project whit `add_subdirectory()` you can add the sub project to the project usings this line
 
-# Flecs
-target_link_libraries("${CMAKE_PROJECT_NAME}" PRIVATE flecs::flecs_static)
+# SDL
+target_link_libraries("${CMAKE_PROJECT_NAME}" PRIVATE SDL2::SDL2-static)
 
 ####################################################################################################
 ### Compile Environment options                                                                  ###
