@@ -1,0 +1,2 @@
+curl -fsSL "https://raw.githubusercontent.com/KernelOso/CMake_Project_Template/refs/heads/main/presets/flecs/libraries.txt" | bash
+curl -fsSL "https://raw.githubusercontent.com/KernelOso/CMake_Project_Template/refs/heads/main/presets/sdl2/libraries.txt" | bash
