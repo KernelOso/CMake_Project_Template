@@ -68,8 +68,8 @@ int main() {
 EOF
     echo "\033[32m Project generated successfully!"
     # compile debug and release folders
-    cmake -S . -B build/Debug -DCMAKE_BUILD_TYPE=Debug
-    cmake -S . -B build/Release -DCMAKE_BUILD_TYPE=Release
+    cmake -S . -B cmake-build-debug -DCMAKE_BUILD_TYPE=Debug
+    cmake -S . -B cmake-build-release -DCMAKE_BUILD_TYPE=Release
     # show commands to compile
     cat <<EOF
 ########################################

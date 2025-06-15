@@ -19,7 +19,7 @@ curl -s https://raw.githubusercontent.com/KernelOso/CMake_Project_Template/refs/
 # Index of Templates
 
 ### Flecs :
-- Flecs (Static) : [CMakeFile](./presets/flecsCMake.txt) | [Init Scrips]()
+- Flecs (Static) : [CMakeFile](./presets/flecs/CMakeLists.txt) | [Init Scrips](./presets/flecs/project.md)
 <br/><br/>
 
 ### FreeGLUT :
