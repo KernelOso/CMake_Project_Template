@@ -1,5 +1,5 @@
-git clone --depth 1 https://github.com/libsdl-org/SDL.git thirdparty/sdl
-cd ./thirdparty/sdl/
-git fetch --depth=1 origin 98d1f3a
-git checkout 98d1f3a
-cd ../..
+git clone --depth 1 https://github.com/libsdl-org/SDL.git thirdparty/sdl \
+cd ./thirdparty/sdl/ \
+git fetch --depth=1 origin 98d1f3a \
+git checkout 98d1f3a \
+cd ../.. 
