@@ -34,8 +34,6 @@ if command -v cmake >/dev/null 2>&1; then
     # Generate Exampel Code
     echo -e "\033[36m Creating Example code..."
     curl -L "${githubPresetRawUrl}main.cpp" -o "./src/main.cpp"
-
-EOF
     echo "\033[32m Project generated successfully!"
     # compile debug and release folders
     cmake -S . -B cmake-build-debug -DCMAKE_BUILD_TYPE=Debug
