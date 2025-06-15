@@ -3,7 +3,8 @@ set -e # Exit when errores detected
 set -u # exit when use variables not inicialized
 set -euo pipefail
 #github url
-githubPresetRawUrl="https://raw.githubusercontent.com/KernelOso/CMake_Project_Template/refs/heads/main/presets/flecs/"
+githubPresetRawUrl="https://raw.githubusercontent.com/KernelOso/CMake_Project_Template/refs/heads/main/${$1}/"
+type="$2"
 # Missing CMake 
 if command -v cmake >/dev/null 2>&1; then
     echo -e "\033[36m Initializing Project..."
@@ -28,14 +29,12 @@ if command -v cmake >/dev/null 2>&1; then
     rm "$TEMP_FILE"
     # cloning github repos
     if command -v git >/dev/null 2>&1; then
-        #flecs
-        git clone --depth 1 https://github.com/SanderMertens/flecs.git thirdparty/flecs
+        #commands file
+        curl -fsSL "${githubPresetRawUrl}libraries.txt" | bash || echo "  libraries.txt doesn't exist!"
     fi
     # Generate Exampel Code
     echo -e "\033[36m Creating Example code..."
-    curl -L "${githubPresetRawUrl}main.c" -o "./src/main.c"
-
-EOF
+    curl -L "${githubPresetRawUrl}main.${type}" -o "./src/main.${type}"
     echo "\033[32m Project generated successfully!"
     # compile debug and release folders
     cmake -S . -B cmake-build-debug -DCMAKE_BUILD_TYPE=Debug
@@ -52,7 +51,7 @@ To Compile and run your code, use the follow commands :
 
     # Debug Compilation :
 
-        #C ompile
+        # Compile
         cmake --build cmake-build-debug
 
         # Run

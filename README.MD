@@ -8,12 +8,12 @@ This config is based on [This Video](https://www.youtube.com/watch?v=IBgfeZME2Vw
 
 C :
 ```
-curl -s https://raw.githubusercontent.com/KernelOso/CMake_Project_Template/refs/heads/main/presets/base/initc.sh | bash -s
+curl -s https://raw.githubusercontent.com/KernelOso/CMake_Project_Template/refs/heads/main/scripts/init.sh | bash -s -- base c
 ```
 
 C++
 ```
-curl -s https://raw.githubusercontent.com/KernelOso/CMake_Project_Template/refs/heads/main/presets/base/initcpp.sh | bash -s
+curl -s https://raw.githubusercontent.com/KernelOso/CMake_Project_Template/refs/heads/main/scripts/init.sh | bash -s -- base cpp
 ```
 
 # Index of Templates

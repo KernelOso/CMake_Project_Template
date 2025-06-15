@@ -8,10 +8,10 @@ CMakeLists projects template for a C/C++ projects ussing [flecs](https://github.
 
 C :
 ```
-curl -s https://raw.githubusercontent.com/KernelOso/CMake_Project_Template/refs/heads/main/presets/flecs/initc.sh | bash -s
+curl -s https://raw.githubusercontent.com/KernelOso/CMake_Project_Template/refs/heads/main/scripts/init.sh | bash -s -- flecs c
 ```
 
 C++
 ```
-curl -s https://raw.githubusercontent.com/KernelOso/CMake_Project_Template/refs/heads/main/presets/flecs/initcpp.sh | bash -s
+curl -s https://raw.githubusercontent.com/KernelOso/CMake_Project_Template/refs/heads/main/scripts/init.sh | bash -s -- flecs cpp
 ```
