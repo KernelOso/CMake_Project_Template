@@ -2,6 +2,8 @@
 set -e # Exit when errores detected
 set -u # exit when use variables not inicialized
 set -euo pipefail
+#github url
+githubPresetRawUrl = "https://raw.githubusercontent.com/KernelOso/CMake_Project_Template/refs/heads/main/presets/flecs/"
 # Missing CMake 
 if command -v cmake >/dev/null 2>&1; then
     echo -e "\033[36m Initializing Project..."
@@ -18,7 +20,7 @@ if command -v cmake >/dev/null 2>&1; then
     done
     # Get CMake Config File
     echo -e "\033[36m Creating CMakeLists file..."
-    RAW_URL="https://raw.githubusercontent.com/KernelOso/CMake_Project_Template/refs/heads/main/presets/flecs/CMakeLists.txt"
+    RAW_URL="${githubPresetRawUrl}CMakeLists.txt"
     PROJECT_NAME="$(basename "$PWD")"
     TEMP_FILE="$(mktemp)"
     curl -fsSL "$RAW_URL" -o "$TEMP_FILE"
@@ -31,39 +33,7 @@ if command -v cmake >/dev/null 2>&1; then
     fi
     # Generate Exampel Code
     echo -e "\033[36m Creating Example code..."
-    cat > "src/main.cpp" << EOF
-
-#include <flecs.h>
-#include <iostream>
-
-// 1. Create a simple COMPONENT
-struct Name {
-    std::string value;
-};
-
-int main() {
-
-    // 2. Create a flecs WORLD
-    flecs::world world;
-
-    // 3. Register your COMPONENTs
-    world.component<Name>();
-
-    // 4. Create an ENTITY whit your COMPONENTs
-    auto e = world.entity("MyEntity")
-             .set<Name>({ "¡Hi, Flecs!" });
-
-    // 5. Create a QUERY
-    flecs::query<const Name> q = world.query<const Name>();
-
-    // 6. Iterate your QUERY
-    q.each([](flecs::entity e, const Name& name) {
-        std::cout << "Entity  : " << e.name() << "\n";
-        std::cout << "Message : " << name.value << "\n";
-    });
-
-    return 0;
-}
+    curl -L "${githubPresetRawUrl}main.cpp" -o "./src/main.cpp"
 
 EOF
     echo "\033[32m Project generated successfully!"

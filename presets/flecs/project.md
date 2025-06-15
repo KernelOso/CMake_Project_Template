@@ -2,6 +2,8 @@
 
 CMakeLists projects template for a C/C++ projects ussing [flecs](https://github.com/SanderMertens/flecs) ECS library
 
+![flecs](https://raw.githubusercontent.com/SanderMertens/flecs/refs/heads/master/docs/img/logo.png)
+
 # Init your project :
 
 C :

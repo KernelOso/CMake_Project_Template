@@ -38,7 +38,7 @@ endif()
 ####################################################################################################
 ### Project Config                                                                               ###
 ####################################################################################################
-project("Flecs_Project") # Specify the name of the project
+project("{{ProjectName}}") # Specify the name of the project
 
 # Useful variables
 # - ${CMAKE_PROJECT_NAME} == THIS project name
