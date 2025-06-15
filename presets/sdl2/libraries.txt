@@ -1,5 +1,8 @@
-git clone --depth 1 https://github.com/libsdl-org/SDL.git thirdparty/sdl \
-cd ./thirdparty/sdl/ \
-git fetch --depth=1 origin 98d1f3a \
-git checkout 98d1f3a \
-cd ../.. 
+mkdir -p thirdparty/sdl
+git init thirdparty/sdl
+cd thirdparty/sdl
+git remote add origin https://github.com/libsdl-org/SDL.git
+git fetch --depth 1 origin 98d1f3a
+git checkout FETCH_HEAD
+cd ..
+cd ..
