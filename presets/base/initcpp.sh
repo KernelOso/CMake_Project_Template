@@ -7,7 +7,7 @@ set -euo pipefail
 echo -e "\033[36m Initializing Project..."
 
 echo -e "\033[36m Creating Directories..."
-dirs=("thirdparty" "resources" "src" "include")
+dirs=("thirdparty" "resources" "include" "src" )
 for dir in "${dirs[@]}"; do
     if [[ -d "$dir" ]]; then
         echo -e "\033[33m  Directory '$dir' already exist!"

@@ -1,18 +1,3 @@
-#
-#  This presets only import in a static way the ECS library : Flecs
-#
-
-#
-#   If you only need the import of library :
-#   
-#   1. clone : git clone https://github.com/SanderMertens/flecs.git thirdparty/flecs
-#
-#   2. config : set(FLECS_SHARED FALSE CACHE BOOL "" FORCE)
-#
-#   3. import : add_subdirectory("thirdparty/flecs")
-#
-#   4. link : target_link_libraries("${CMAKE_PROJECT_NAME}" PRIVATE flecs_static)
-#
 
 cmake_minimum_required(VERSION "3.20")
 
@@ -33,13 +18,13 @@ if(CMAKE_BUILD_TYPE STREQUAL "Release")
     set(CMAKE_INTERPROCEDURAL_OPTIMIZATION TRUE)
 else()
     set(CMAKE_INTERPROCEDURAL_OPTIMIZATION FALSE)
-endif()
 
+endif()
 
 ####################################################################################################
 ### Project Config                                                                               ###
 ####################################################################################################
-project("Flecs_Project") # Specify the name of the project
+project("{{ProjectName}}") # Specify the name of the project
 
 # Useful variables
 # - ${CMAKE_PROJECT_NAME} == THIS project name
@@ -78,15 +63,15 @@ target_include_directories("${CMAKE_PROJECT_NAME}" PUBLIC "${CMAKE_CURRENT_SOURC
 ##### Git Clone Commands
 ##################
 
-# Flecs
-#git clone https://github.com/SanderMertens/flecs.git thirdparty/flecs
+# <Library Name>
+# git clone <url> thirdparty/<Library Name>
 
 ##################
 ##### Library Config
 ##################
 
-# Flecs
-set(FLECS_SHARED FALSE CACHE BOOL "" FORCE)
+# <Library Name>
+# set <library config variable>
 
 ##################
 ##### Subdirectory Import
@@ -94,17 +79,17 @@ set(FLECS_SHARED FALSE CACHE BOOL "" FORCE)
 #add_subdirectory("thirdparty/...")
 # This Line, tells to CMake to look in the specified folder, for other CMakeList files to add in the project
 
-# Flecs
-add_subdirectory("thirdparty/flecs")
+# <Library Name>
+# add_subdirectory("thirdparty/<Library Name>")
 
 ##################
 ##### External Project Libraries
 ##################
-#target_link_libraries("<project name>" <Private/Public/Protected> "SubProject")
+#target_link_libraries("${CMAKE_PROJECT_NAME}" <Private/Public/Protected> "SubProject")
 # After add an external project whit `add_subdirectory()` you can add the sub project to the project usings this line
 
-# Flecs
-target_link_libraries("${CMAKE_PROJECT_NAME}" PRIVATE flecs_static)
+# <Library Name>
+#target_link_libraries("${CMAKE_PROJECT_NAME}" <Private/Public/Protected> "SubProject")
 
 
 ####################################################################################################
